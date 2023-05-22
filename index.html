@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-dark.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+
+</head>
+<body class="container">
+    <header class="header">
+        <img class="header_logo" src="img/logo.svg" alt="logo">
+        <label for="toggle" id="label_toggle">
+            <i class="fa-solid fa-moon"></i>
+        </label>
+        <input type="checkbox" name="" id="toggle">
+    </header>
+
+    <main class="main">
+
+        <section class="text">
+            <textarea class="text_textarea" placeholder="Ingrese el texto aqui"></textarea>
+
+            <div class="write">
+                <img class="write_svg" src="img/info.svg" alt="info">
+                <p class="write_paragraph">Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="btn">
+                <input class="btn_input btn-style btn-blue" type="submit" value="Encriptar">
+                <input class="btn_input btn-style btn-white" type="submit" value="Desencriptar">
+            </div>
+        </section>
+
+        <section class="noText text-center">
+            <img class="noText_mascota" src="img/mascota.svg" alt="mascota">
+            <h2 class="noText_title">Ningún mensaje fue encontrado</h2>
+            <p class="noText_paragraph">Ingrese el texto que desees encriptar o desencriptar.</p>
+        </section>
+
+        <section class="textTrue">
+            <p class="textTrue_paragraph"></p>
+            <input class="textTrue_input btn-style btn-white" type="submit" value="Copy">
+        </section>
+    </main>
+
+    <script type="module" src="./script/main.js"></script>
+</body>
+</html>

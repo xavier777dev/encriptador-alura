@@ -1,0 +1,254 @@
+:root {
+    --color-bg: #E5E5E5;
+    --font-txt: 'Inter', sans-serif;
+    --color-blue: #0A3871;
+    --text-info: #495057;
+    --color-white: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 62.5% }
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-bg);
+    font-family: var(--font-txt);
+    height: 100vh;
+    transition: all 1.5s ease;
+}
+
+
+/* Globales */
+.container {
+    width: min(90%, 144rem);
+    margin: 0 auto;
+}
+
+.text-center { text-align: center }
+
+.btn-style {
+    padding: 2.4rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-blue { 
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border: 1px solid var(--color-blue);
+}
+.btn-blue:hover {
+    background-color: #09203c;
+    color: rgb(226, 225, 240);
+}
+
+.btn-white { 
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    transition: .5s ease all;
+    border: 1px solid var(--color-blue);
+}
+.btn-white:hover {
+    background-color: #a3a5a757;
+    color: black;
+}
+
+
+/* header */
+.header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_logo {
+    animation: rotation 1s 1 3s;
+    transition: 0.8s linear 0s;
+}
+.header_logo:hover { transform: rotate(720deg) }
+@keyframes rotation { 100% { transform: rotate(360deg) } }
+
+.main {
+    padding-bottom: 2rem;
+}
+
+/* text */
+.text {
+    padding-top: 5rem;
+}
+
+.text_textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    outline: none;
+    color: var(--color-blue);
+    font-size: 3.2rem;
+
+    overflow: hidden;
+    min-height: 25rem;
+}
+
+.text_textarea::placeholder { color: var(--color-blue) }
+
+.write {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+.write_paragraph {
+    font-size: 1.2rem;
+    color: var(--text-info);
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    padding: 2rem 0;
+}
+
+
+/* notText */
+.noText, .textTrue, .message {
+    background-color: var(--color-white);
+    padding: 3.2rem;
+    border-radius: 3.2rem;
+    margin-top: 5rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3.2rem;
+    
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+.noText_mascota { display: none }
+
+
+/* animation sacudir */
+.sacudir { animation: sacudir .8s linear both }
+@keyframes sacudir {
+    0%, 100% { 
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% { transform: rotate(8deg) }
+    20%, 40%, 60% {transform: rotate(-10deg) }
+    30%, 50%, 70% { transform: rotate(10deg) }
+    80% { transform: rotate(-8deg) }
+    90% { transform: rotate(8deg) }
+}
+
+.textTrue_paragraph, .noText_title { font-size: 2.4rem }
+
+.noText_paragraph { font-size: 1.6rem }
+
+
+/* error */
+.error {
+    color: red;
+    transform: scale(1.2);
+    padding-left: 2rem;
+    transition: .3s ease;
+}
+
+.write_svg--error {
+    transition: .3s ease;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(82%) saturate(5882%) hue-rotate(355deg) brightness(110%) contrast(129%);
+}
+
+
+/* textTrue*/
+.textTrue { 
+    display: none;
+}
+.textTrue_paragraph {
+    word-break: break-all;
+    cursor: default;
+    max-height: 25rem;
+    overflow: auto;
+}
+
+
+/* media queries */
+@media (min-width: 375px) {
+    .btn {
+        display: flex;
+        flex-direction: row;
+    }
+    .btn-style { width: 100% }
+}
+
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 5% 95%;
+    }
+    .header {
+        padding-top: 2rem;
+    }
+    .main {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        align-items: center;
+        height: 100vh;
+        padding: 2rem 0;
+    }
+    .text_textarea {
+        min-height: 55%;
+        margin: 0;
+    }
+    .noText_mascota {
+        display: flex;
+        width: 90%;
+    }
+    .textTrue {
+        margin: 0;
+        height: 95vh;
+    }
+    .btn {
+        padding: 1rem 0 3.2rem 0;
+    }
+    .text {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        
+        width: 90%;
+        height: 95vh;
+    }
+    .textTrue_paragraph {
+        height: 85vh;
+        overflow: auto;
+    }
+    .noText {
+        margin: 0;
+        width: 100%;
+        height: 95vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .noText_mascota {
+        animation: sacudir .8s linear bot;
+    }
+    .noText_paragraph {
+        width: 100%;
+    }
+}
