@@ -76,10 +76,8 @@ export const sacudir = () => {
 }
 
 export const darkTheme = (e) => {
-    document.body.classList.toggle("dark")
-    console.log(e.target.checked);
+    document.body.classList.toggle("dark");
     if (e.target.checked) {
-        // labelToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
         labelToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
         labelToggle.style.color = "#c28c18";
     }
